@@ -1,11 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import ViewBudget from './ViewBudget';
+import EditBudget from './EditBudget'
 import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
-	const { budget } = useContext(AppContext);
+	const { budget, dispatch } = useContext(AppContext);
+
+	const [isEditing, setIsEditing] = useState(false);
+
+	const handleEditClick = () => { 
+		setIsEditing(true);
+	};
+
+	const handleSaveClick = (value) => { 
+		dispatch({
+			type: 'EDIT_BUDGET',
+			payload: value,
+		});
+		setIsEditing(false);
+	};
+
 	return (
-		<div className='alert alert-secondary'>
-			<span>Budget: ${budget}</span>
+		<div className='alert alert-secondary p-3 d-flex align-items-center justify-content-between'>
+			{isEditing ? (
+				<EditBudget handleSaveClick={handleSaveClick} budget={budget} />
+			) : (
+				<ViewBudget handleEditClick={handleEditClick} budget={budget} />
+			)}
 		</div>
 	);
 };
