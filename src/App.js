@@ -6,6 +6,7 @@ import ExpenseTotal from './components/ExpenseTotal';
 import ExpenseList from './components/ExpenseList';
 import AddExpenseForm from './components/AddExpenseForm';
 import EditBudgetForm from './components/EditBudgetForm';
+import SearchExpensesForm from './components/SearchExpensesForm';
 import { AppProvider } from './context/AppContext';
 
 const App = () => {
@@ -24,7 +25,17 @@ const App = () => {
 	  				<ExpenseTotal />
 	  			</div>
 	  		</div>
+	  		<div className='row mt-3'>
+				<div className='col-sm'>
+					<EditBudgetForm />
+				</div>
+			</div>
 	  		<h3 className='mt-3'>Expenses</h3>
+	  		<div className='row mt-3'>
+				<div className='col-sm'>
+					<SearchExpensesForm />
+				</div>
+			</div>
 	  		<div className='row mt-3'>
 	  			<div className='col-sm'>
 	  				<ExpenseList /> 
@@ -35,11 +46,7 @@ const App = () => {
 					<AddExpenseForm />
 				</div>
 			</div>
-			<div className='row mt-3'>
-				<div className='col-sm'>
-					<EditBudgetForm />
-				</div>
-			</div>
+
 	  	</div>
 	 </AppProvider>
   );

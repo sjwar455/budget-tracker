@@ -19,6 +19,11 @@ const AppReducer = (state, action) => {
 				...state,
 				budget: action.payload,
 			};
+		case 'SEARCH_EXPENSES':
+			return{ 
+				...state,
+				criteria: action.payload,
+			}
 		default:
 			return state;
 	}
@@ -26,6 +31,7 @@ const AppReducer = (state, action) => {
 
 const initialState = {
 	budget: 4000,
+	criteria: "",
 	expenses: [
 		{ id: 12, name: 'Mortgage', cost: 1600 },
 		{ id: 13, name: 'Utilities', cost: 300 },
