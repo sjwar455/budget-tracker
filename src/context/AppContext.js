@@ -19,11 +19,6 @@ const AppReducer = (state, action) => {
 				...state,
 				budget: action.payload,
 			};
-		case 'SEARCH_EXPENSES':
-			return{ 
-				...state,
-				criteria: action.payload,
-			}
 		default:
 			return state;
 	}
