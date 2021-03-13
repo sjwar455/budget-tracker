@@ -5,6 +5,7 @@ import Remaining from './components/Remaining';
 import ExpenseTotal from './components/ExpenseTotal';
 import ExpenseList from './components/ExpenseList';
 import AddExpenseForm from './components/AddExpenseForm';
+import EditBudgetForm from './components/EditBudgetForm';
 import { AppProvider } from './context/AppContext';
 
 const App = () => {
@@ -32,6 +33,11 @@ const App = () => {
 	  		<div className='row mt-3'>
 				<div className='col-sm'>
 					<AddExpenseForm />
+				</div>
+			</div>
+			<div className='row mt-3'>
+				<div className='col-sm'>
+					<EditBudgetForm />
 				</div>
 			</div>
 	  	</div>
